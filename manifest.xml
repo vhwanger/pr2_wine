@@ -1,0 +1,25 @@
+<package>
+  <description brief="manip_project">
+
+     manip_project
+
+  </description>
+  <author>vchwang</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/manip_project</url>
+  <depend package="tf"/>
+  <depend package="tf_conversions"/>
+  <depend package="roscpp"/>
+  <depend package="kdl"/>
+  <depend package="ikfast_pr2"/>
+  <depend package="pr2_arm_utils"/>
+  <depend package="ee_cart_imped_action"/>
+  <depend package="pviz"/>
+  <depend package="ee_cart_imped_msgs"/>
+  <depend package="pr2_mechanism_msgs"/>
+  <depend package="pcl_ros"/>
+
+</package>
+
+

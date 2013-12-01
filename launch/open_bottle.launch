@@ -1,0 +1,14 @@
+<launch>
+    <include file="/etc/ros/groovy/openni_head.launch"/>
+    <include file="$(find ar_track_alvar)/launch/pr2_indiv.launch"/>
+    <include file="$(find ee_cart_imped_launch)/launch/load_ee_cart_imped.launch"/>
+
+    <node pkg="robot_self_filter_color" type="self_filter_color" respawn="true" name="object_modeling_kinect_self_filter"
+      output="screen">
+      <remap from="cloud_in" to="/kinect_head/depth_registered/points" />
+      <remap from="cloud_out" to="/camera/rgb/object_modeling_points_filtered" />
+      <param name="sensor_frame" type="string" value="head_mount_kinect_rgb_optical_frame"/>
+      <param name="subsample_value" type="double" value=".005"/>
+      <rosparam command="load" file="$(find pr2_arm_navigation_perception)/config/self_filter_left.yaml" />
+    </node>
+</launch>
